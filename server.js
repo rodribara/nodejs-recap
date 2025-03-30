@@ -4,6 +4,8 @@ const path = require("path");
 
 const PORT = process.env.PORT || 3500;
 
+a;
+
 app.get("^/$|/index(.html)?", (req, res) => {
   // ()? means optional // ^/$ means the root path or /index.html
   res.sendFile(path.join(__dirname, "views", "index.html"));
