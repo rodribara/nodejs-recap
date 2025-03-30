@@ -1,0 +1,4 @@
+2025-03-30	02:48:59	c540c2f0-9d55-490b-ae01-96c036c97a74	GET	/new-page.html
+2025-03-30	02:48:59	4a739bd6-9181-49ed-b8e9-52b8c7ac2f02	GET	/css/style.css
+2025-03-30	02:48:59	0bdadfd0-4f63-4034-b71f-69b3226807b5	GET	/img/img1.jpg
+2025-03-30	02:48:59	b74c64d4-4764-4620-b0db-1d4eaab2106e	GET	/favicon.ico
