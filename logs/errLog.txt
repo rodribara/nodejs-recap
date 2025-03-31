@@ -7,3 +7,4 @@
 2025-03-30	05:04:25	5fdb74df-7471-4d6b-bd98-0fd22e6c87cb	ReferenceError: sendFile is not defined
 2025-03-30	05:04:53	31b0a490-08d9-44cd-87bf-bc5fcdb4248d	ReferenceError: sendFile is not defined
 2025-03-30	05:04:53	c65b233a-5000-4f88-aa39-d1b917b2a3c2	ReferenceError: sendFile is not defined
+2025-03-30	20:21:18	cc8e48b6-b382-444d-a222-a3a6207ed1f9	Error: ENOENT: no such file or directory, stat 'C:\GitHub\nodejs-recap\views\subdir\test.html'
