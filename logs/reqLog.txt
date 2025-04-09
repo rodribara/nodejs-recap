@@ -125,3 +125,9 @@
 2025-03-30	21:24:48	a3b9cd11-c00b-4b6b-9757-22ef0bf0d8d8	GET	undefined	/employees
 2025-03-30	21:27:57	505db25c-bf29-44aa-9c74-e1c6b79520cf	GET	undefined	/employees
 2025-03-30	21:28:15	def2398f-1c0e-449d-b161-8ee457c860d0	GET	undefined	/employees
+2025-04-09	14:24:43	8ac9f6bd-4a4c-4434-8c0a-17307532390a	GET	undefined	/employees
+2025-04-09	14:25:56	e92bb244-c29f-425e-a34c-fdb025e8ae99	GET	undefined	/employees
+2025-04-09	14:27:18	b7f43d14-7555-4c45-b0ee-bfda70b5b429	POST	undefined	/employees
+2025-04-09	14:28:17	012f8dd8-751f-4a2e-99d7-7246def45c6a	PUT	undefined	/employees
+2025-04-09	14:29:27	0cb2f597-4ad2-4295-8626-6d86aa10c9f4	DELETE	undefined	/employees
+2025-04-09	14:30:01	c6212547-c0a2-4ca3-a22d-5e443b8e0c2c	GET	undefined	/employees/1

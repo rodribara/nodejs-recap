@@ -3,7 +3,7 @@ const router = express.Router();
 const {
   getAllEmployees,
   createNewEmployee,
-  updateEmployeee,
+  updateEmployee,
   deleteEmployee,
   getEmployee,
 } = require("../../controllers/employeesController");
@@ -12,7 +12,7 @@ router
   .route("/")
   .get(getAllEmployees)
   .post(createNewEmployee)
-  .put(updateEmployeee)
+  .put(updateEmployee)
   .delete(deleteEmployee);
 
 router.route("/:id").get(getEmployee);
