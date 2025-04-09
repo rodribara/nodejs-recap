@@ -131,3 +131,6 @@
 2025-04-09	14:28:17	012f8dd8-751f-4a2e-99d7-7246def45c6a	PUT	undefined	/employees
 2025-04-09	14:29:27	0cb2f597-4ad2-4295-8626-6d86aa10c9f4	DELETE	undefined	/employees
 2025-04-09	14:30:01	c6212547-c0a2-4ca3-a22d-5e443b8e0c2c	GET	undefined	/employees/1
+2025-04-09	14:58:09	21920973-3a35-4cb9-9f0d-9798bb2e3be7	POST	undefined	/register
+2025-04-09	14:58:42	945b4ca4-24de-413a-ab3a-cd7809789cd0	POST	undefined	/register
+2025-04-09	14:59:32	6c1ff2fa-aaf8-429a-9750-facd1c42a61f	POST	undefined	/register
