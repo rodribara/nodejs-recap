@@ -23,6 +23,7 @@ app.use("/", express.static(path.join(__dirname, "public"))); // built-in middle
 //routes
 app.use("/", require("./routes/root")); // mount subdir router
 app.use("/register", require("./routes/register")); // mount subdir router
+app.use("/auth", require("./routes/auth")); // mount subdir router
 app.use("/employees", require("./routes/api/employees")); // mount subdir router
 
 app.all("*", (req, res) => {
