@@ -6,10 +6,14 @@ const corsOptions = require("./config/corsOptions");
 const { logger } = require("./middleware/logEvents");
 const errorHandler = require("./middleware/errorHandler");
 const PORT = process.env.PORT || 3500;
+const cookieParser = require("cookie-parser");
+const verifyJWT = require("./middleware/verifyJWT");
+const credentials = require("./middleware/credentials");
 
 // custom middleware logger
 
 app.use(logger);
+app.use(credentials);
 
 app.use(cors(corsOptions)); // Cross-Origin Resource Sharing (CORS) middleware
 //built-in middleware to handle urlencoded form data
@@ -18,13 +22,18 @@ app.use(express.urlencoded({ extended: false }));
 
 app.use(express.json()); // built-in middleware for json data
 
+//middleware for cookies
+app.use(cookieParser());
 app.use("/", express.static(path.join(__dirname, "public"))); // built-in middleware for static files
 
 //routes
-app.use("/", require("./routes/root")); // mount subdir router
-app.use("/register", require("./routes/register")); // mount subdir router
-app.use("/auth", require("./routes/auth")); // mount subdir router
-app.use("/employees", require("./routes/api/employees")); // mount subdir router
+app.use("/", require("./routes/root"));
+app.use("/register", require("./routes/register"));
+app.use("/auth", require("./routes/auth"));
+app.use("/refresh", require("./routes/refresh"));
+app.use("/logout", require("./routes/logout"));
+app.use(verifyJWT);
+app.use("/employees", require("./routes/api/employees"));
 
 app.all("*", (req, res) => {
   // catch all route handler

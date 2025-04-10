@@ -5,6 +5,10 @@ const usersDB = {
   },
 };
 const bcrypt = require("bcrypt");
+const path = require("path");
+const jwt = require("jsonwebtoken");
+require("dotenv").config(); // for JWT secret
+const fsPromises = require("fs").promises;
 
 const handleLogin = async (req, res) => {
   const { user, pwd } = req.body;
@@ -18,7 +22,36 @@ const handleLogin = async (req, res) => {
   const match = await bcrypt.compare(pwd, foundUser.password);
   if (match) {
     // missing creation JWT tokens
-    res.json({ success: `User${user} is logged in!` });
+    const accessToken = jwt.sign(
+      { username: foundUser.username, roles: foundUser.roles },
+      process.env.ACCESS_TOKEN_SECRET,
+      { expiresIn: "30s" }
+    );
+    const refreshToken = jwt.sign(
+      { username: foundUser.username, roles: foundUser.roles },
+      process.env.REFRESH_TOKEN_SECRET,
+      { expiresIn: "1d" }
+    );
+
+    // saving refreshToken with current user
+    const otherUsers = usersDB.users.filter(
+      (person) => person.username !== user
+    );
+    const currentUser = { ...foundUser, refreshToken };
+    usersDB.setUsers([...otherUsers, currentUser]);
+    await fsPromises.writeFile(
+      path.join(__dirname, "..", "model", "users.json"),
+      JSON.stringify(usersDB.users)
+    );
+    res.cookie("jwt", refreshToken, refreshToken, {
+      httpOnly: true,
+      sameSite: "None",
+      secure: true, // set to true in production
+      maxAge: 24 * 60 * 60 * 1000,
+    });
+
+    // secure: true, sameSite: 'None' for production
+    res.json({ accessToken });
   } else {
     res.sendStatus(401); //Unauthorized
   }

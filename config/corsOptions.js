@@ -1,13 +1,8 @@
-const whitelist = [
-  "https://www.example1.com",
-  "https://example1.com",
-  "http://127.0.0.1:5500",
-  "http://localhost:3500",
-];
+const allowedOrigins = require("./allowedOrigins"); // import the allowed origins from allowedOrigins.js
 
 const corsOptions = {
   origin: (origin, callback) => {
-    if (whitelist.indexOf(origin) !== -1 || !origin) {
+    if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
       // allow requests from the whitelist or no origin (like mobile apps or curl requests)
       callback(null, true); // null means no error, true means allow the request
     } else {
