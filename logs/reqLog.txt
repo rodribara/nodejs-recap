@@ -192,3 +192,5 @@
 2025-04-10	09:24:36	f40c2d8d-e04b-48c5-b7c8-a9b0b51e5a21	POST	undefined	/employees
 2025-04-10	09:25:32	517faa02-0a4f-42fb-aece-5fca80cfd442	POST	undefined	/auth
 2025-04-10	09:25:52	f1e2a366-9132-41b2-902a-ab97cdf02dd0	POST	undefined	/employees
+2025-04-10	12:10:33	7900a9b8-d36d-4fdc-86fb-bc953ba61897	POST	undefined	/register
+2025-04-10	12:11:26	4c4be837-72e6-4b66-ae21-3fc4dc4cca68	POST	undefined	/register
