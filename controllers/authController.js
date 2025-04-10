@@ -7,7 +7,6 @@ const usersDB = {
 const bcrypt = require("bcrypt");
 const path = require("path");
 const jwt = require("jsonwebtoken");
-require("dotenv").config(); // for JWT secret
 const fsPromises = require("fs").promises;
 
 const handleLogin = async (req, res) => {

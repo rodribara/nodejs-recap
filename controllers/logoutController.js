@@ -8,7 +8,6 @@ const usersDB = {
 const fsPromises = require("fs").promises;
 const path = require("path");
 const jwt = require("jsonwebtoken");
-require("dotenv").config(); // for JWT secret
 
 const handleLogout = async (req, res) => {
   // On client, also delete the accessToken
