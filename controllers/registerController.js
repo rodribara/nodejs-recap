@@ -1,5 +1,4 @@
 const User = require("../model/User");
-
 const bcrypt = require("bcrypt");
 
 const handleNewUser = async (req, res) => {
@@ -12,7 +11,7 @@ const handleNewUser = async (req, res) => {
   const duplicate = await User.findOne({ username: user }).exec();
 
   if (duplicate)
-    return res.setStatus(409).json({ message: "Username already exists." });
+    return res.status(409).json({ message: "Username already exists." });
 
   try {
     // encrypt the password
